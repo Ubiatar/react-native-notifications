@@ -91,7 +91,7 @@ public class PushNotification implements IPushNotification {
         }
 
         final ReactContext reactContext = mAppLifecycleFacade.getRunningReactContext();
-        if (reactContext.getCurrentActivity() == null) {
+        if (reactContext != null && reactContext.getCurrentActivity() == null) {
             setAsInitialNotification();
         }
 
